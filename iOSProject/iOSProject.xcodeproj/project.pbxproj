@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C376399029E863D100962210 /* myDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = C376398F29E863D000962210 /* myDatabase.db */; };
 		C37E811229E758BF0009173D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811129E758BF0009173D /* AppDelegate.swift */; };
 		C37E811429E758BF0009173D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811329E758BF0009173D /* SceneDelegate.swift */; };
 		C37E811629E758BF0009173D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811529E758BF0009173D /* ViewController.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C376398F29E863D000962210 /* myDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = myDatabase.db; path = ../../../myDatabase.db; sourceTree = "<group>"; };
 		C37E810E29E758BF0009173D /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37E811129E758BF0009173D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37E811329E758BF0009173D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +80,7 @@
 				C37E811C29E758C10009173D /* LaunchScreen.storyboard */,
 				C37E811F29E758C10009173D /* Info.plist */,
 				C37E812D29E7978B0009173D /* default-nscc.jpg */,
+				C376398F29E863D000962210 /* myDatabase.db */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			files = (
 				C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */,
 				C37E811E29E758C10009173D /* LaunchScreen.storyboard in Resources */,
+				C376399029E863D100962210 /* myDatabase.db in Resources */,
 				C37E811B29E758C10009173D /* Assets.xcassets in Resources */,
 				C37E811929E758BF0009173D /* Main.storyboard in Resources */,
 			);

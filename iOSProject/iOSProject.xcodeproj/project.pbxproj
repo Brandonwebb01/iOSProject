@@ -13,6 +13,11 @@
 		C37E811929E758BF0009173D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37E811729E758BF0009173D /* Main.storyboard */; };
 		C37E811B29E758C10009173D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C37E811A29E758C10009173D /* Assets.xcassets */; };
 		C37E811E29E758C10009173D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C37E811C29E758C10009173D /* LaunchScreen.storyboard */; };
+		C37E812629E793630009173D /* SplashController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812529E793630009173D /* SplashController.swift */; };
+		C37E812829E7937F0009173D /* ContactInfoController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812729E7937F0009173D /* ContactInfoController.swift */; };
+		C37E812A29E7938E0009173D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812929E7938E0009173D /* TableViewController.swift */; };
+		C37E812C29E7939D0009173D /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812B29E7939D0009173D /* CreditsController.swift */; };
+		C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37E812D29E7978B0009173D /* default-nscc.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +29,11 @@
 		C37E811A29E758C10009173D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C37E811D29E758C10009173D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C37E811F29E758C10009173D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C37E812529E793630009173D /* SplashController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashController.swift; sourceTree = "<group>"; };
+		C37E812729E7937F0009173D /* ContactInfoController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactInfoController.swift; sourceTree = "<group>"; };
+		C37E812929E7938E0009173D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		C37E812B29E7939D0009173D /* CreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
+		C37E812D29E7978B0009173D /* default-nscc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "default-nscc.jpg"; path = "../../../default-nscc.jpg"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +70,14 @@
 				C37E811329E758BF0009173D /* SceneDelegate.swift */,
 				C37E811529E758BF0009173D /* ViewController.swift */,
 				C37E811729E758BF0009173D /* Main.storyboard */,
+				C37E812529E793630009173D /* SplashController.swift */,
+				C37E812729E7937F0009173D /* ContactInfoController.swift */,
+				C37E812929E7938E0009173D /* TableViewController.swift */,
+				C37E812B29E7939D0009173D /* CreditsController.swift */,
 				C37E811A29E758C10009173D /* Assets.xcassets */,
 				C37E811C29E758C10009173D /* LaunchScreen.storyboard */,
 				C37E811F29E758C10009173D /* Info.plist */,
+				C37E812D29E7978B0009173D /* default-nscc.jpg */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -125,6 +140,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */,
 				C37E811E29E758C10009173D /* LaunchScreen.storyboard in Resources */,
 				C37E811B29E758C10009173D /* Assets.xcassets in Resources */,
 				C37E811929E758BF0009173D /* Main.storyboard in Resources */,
@@ -138,9 +154,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C37E812629E793630009173D /* SplashController.swift in Sources */,
+				C37E812C29E7939D0009173D /* CreditsController.swift in Sources */,
+				C37E812A29E7938E0009173D /* TableViewController.swift in Sources */,
 				C37E811629E758BF0009173D /* ViewController.swift in Sources */,
 				C37E811229E758BF0009173D /* AppDelegate.swift in Sources */,
 				C37E811429E758BF0009173D /* SceneDelegate.swift in Sources */,
+				C37E812829E7937F0009173D /* ContactInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

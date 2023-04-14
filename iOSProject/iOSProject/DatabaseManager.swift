@@ -134,27 +134,48 @@ class DatabaseManager {
             return (firstName ?? "", lastName ?? "", emailAddress ?? "", address ?? "", phoneNumber ?? "", notes ?? "")
         }
     
-        func readAll() -> NSArray {
-               var statement: OpaquePointer?
-               let people = [] as NSMutableArray
-               
-               if sqlite3_prepare_v2(db, "SELECT * from Contacts", -1, &statement, nil) == SQLITE_OK {
-                   while sqlite3_step(statement) == SQLITE_ROW {
-                       let id = sqlite3_column_int(statement, 0)
-                       let firstName = String(cString: sqlite3_column_text(statement, 1))
-                       let lastName = String(cString: sqlite3_column_text(statement, 2))
-                       let emailAddress = String(cString: sqlite3_column_text(statement, 3))
-                       let address = String(cString: sqlite3_column_text(statement, 4))
-                       let phoneNumber = String(cString: sqlite3_column_text(statement, 5))
-                       let notes = String(cString: sqlite3_column_text(statement, 6))
-                       
-                       let person = ["id": id, "firstName": firstName, "lastName": lastName, "emailAddress": emailAddress, "address": address, "phoneNumber": phoneNumber, "notes": notes] as [String : Any] as [String : Any]
-                       people.add(person)
-                   }
+    func readAll() -> NSArray {
+           var statement: OpaquePointer?
+           let people = [] as NSMutableArray
+           
+           if sqlite3_prepare_v2(db, "SELECT * from Contacts", -1, &statement, nil) == SQLITE_OK {
+               while sqlite3_step(statement) == SQLITE_ROW {
+                   let id = sqlite3_column_int(statement, 0)
+                   let firstName = String(cString: sqlite3_column_text(statement, 1))
+                   let lastName = String(cString: sqlite3_column_text(statement, 2))
+                   let emailAddress = String(cString: sqlite3_column_text(statement, 3))
+                   let address = String(cString: sqlite3_column_text(statement, 4))
+                   let phoneNumber = String(cString: sqlite3_column_text(statement, 5))
+                   let notes = String(cString: sqlite3_column_text(statement, 6))
+                   
+                   let person = ["id": id, "firstName": firstName, "lastName": lastName, "emailAddress": emailAddress, "address": address, "phoneNumber": phoneNumber, "notes": notes] as [String : Any] as [String : Any]
+                   people.add(person)
                }
-
-               sqlite3_finalize(statement)
-
-               return people
            }
+
+           sqlite3_finalize(statement)
+
+           return people
+       }
+    func getContactId(firstName: String, lastName: String) -> Int? {
+        var statement: OpaquePointer?
+        let queryStatementString = "SELECT id FROM Contacts WHERE firstName = ? AND lastName = ?;"
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &statement, nil) == SQLITE_OK {
+            sqlite3_bind_text(statement, 1, firstName, -1, nil)
+            sqlite3_bind_text(statement, 2, lastName, -1, nil)
+
+            if sqlite3_step(statement) == SQLITE_ROW {
+                let id = Int(sqlite3_column_int(statement, 0))
+                sqlite3_finalize(statement)
+                return id
+            } else {
+                print("Error retrieving contact id")
+                sqlite3_finalize(statement)
+                return nil
+            }
+        } else {
+            print("Error preparing query statement")
+            return nil
+        }
+    }
 }

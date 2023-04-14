@@ -35,6 +35,13 @@ class ContactDetailController: UIViewController {
         addressText.text = contact?.address
         phoneNumberText.text = contact?.phoneNumber
         notesText.text = contact?.notes
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(UIInputViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    @objc func dismissKeyboard() {
+        view.endEditing(true)
     }
     
     
@@ -43,7 +50,24 @@ class ContactDetailController: UIViewController {
     @IBAction func EditButton(_ sender: Any) {
     }
     @IBAction func DeleteButton(_ sender: Any) {
+        guard let id = databaseManager.getContactId(firstName: contact?.firstName ?? "", lastName: contact?.lastName ?? "") else {
+                print("Error getting contact id")
+                return
+            }
+            
+            if databaseManager.deleteContact(id: id) {
+                let alert = UIAlertController(title: "Success", message: "Contact deleted.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
+                    self.dismiss(animated: true, completion: nil)
+                }))
+                self.present(alert, animated: true, completion: nil)
+            } else {
+                let alert = UIAlertController(title: "Error", message: "Error deleting contact.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+            }
     }
+    
     @IBAction func CloseButton(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }

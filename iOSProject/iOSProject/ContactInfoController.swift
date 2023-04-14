@@ -31,7 +31,8 @@ class ContactInfoController: UIViewController {
                   let emailAddress = emailAddressText.text, !emailAddress.isEmpty,
                   let address = addressText.text, !address.isEmpty,
                   let phoneNumber = phoneNumberText.text, !phoneNumber.isEmpty,
-                  let notes = notesText.text, !notes.isEmpty else {
+                  let notes = notesText.text, !notes.isEmpty
+            else {
                 // Show an alert if any field is empty
                 let alert = UIAlertController(title: "Error", message: "All fields are required", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))

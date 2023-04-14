@@ -18,6 +18,7 @@
 		C37E812A29E7938E0009173D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812929E7938E0009173D /* TableViewController.swift */; };
 		C37E812C29E7939D0009173D /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812B29E7939D0009173D /* CreditsController.swift */; };
 		C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37E812D29E7978B0009173D /* default-nscc.jpg */; };
+		C3925EEA29E91265002AD64D /* ContactDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3925EE929E91265002AD64D /* ContactDetailController.swift */; };
 		C3981F8629E8DA520007C0DC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3981F8529E8DA520007C0DC /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
@@ -35,6 +36,7 @@
 		C37E812929E7938E0009173D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C37E812B29E7939D0009173D /* CreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		C37E812D29E7978B0009173D /* default-nscc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "default-nscc.jpg"; path = "../../../default-nscc.jpg"; sourceTree = "<group>"; };
+		C3925EE929E91265002AD64D /* ContactDetailController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactDetailController.swift; sourceTree = "<group>"; };
 		C3981F8529E8DA520007C0DC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				C37E811F29E758C10009173D /* Info.plist */,
 				C37E812D29E7978B0009173D /* default-nscc.jpg */,
 				C3981F8529E8DA520007C0DC /* DatabaseManager.swift */,
+				C3925EE929E91265002AD64D /* ContactDetailController.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -164,6 +167,7 @@
 				C37E811629E758BF0009173D /* ViewController.swift in Sources */,
 				C37E811229E758BF0009173D /* AppDelegate.swift in Sources */,
 				C37E811429E758BF0009173D /* SceneDelegate.swift in Sources */,
+				C3925EEA29E91265002AD64D /* ContactDetailController.swift in Sources */,
 				C37E812829E7937F0009173D /* ContactInfoController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

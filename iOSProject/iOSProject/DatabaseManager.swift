@@ -52,6 +52,12 @@ class DatabaseManager {
             print("Error preparing insert statement")
             return false
         }
+        print("First name: \(firstName)")
+        print("Last name: \(lastName)")
+        print("Email address: \(emailAddress)")
+        print("Address: \(address)")
+        print("Phone number: \(phoneNumber)")
+        print("Notes: \(notes)")
         sqlite3_finalize(insertStatement)
         return true
     }
@@ -127,4 +133,28 @@ class DatabaseManager {
 
             return (firstName ?? "", lastName ?? "", emailAddress ?? "", address ?? "", phoneNumber ?? "", notes ?? "")
         }
+    
+        func readAll() -> NSArray {
+               var statement: OpaquePointer?
+               let people = [] as NSMutableArray
+               
+               if sqlite3_prepare_v2(db, "SELECT * from Contacts", -1, &statement, nil) == SQLITE_OK {
+                   while sqlite3_step(statement) == SQLITE_ROW {
+                       let id = sqlite3_column_int(statement, 0)
+                       let firstName = String(cString: sqlite3_column_text(statement, 1))
+                       let lastName = String(cString: sqlite3_column_text(statement, 2))
+                       let emailAddress = String(cString: sqlite3_column_text(statement, 3))
+                       let address = String(cString: sqlite3_column_text(statement, 4))
+                       let phoneNumber = String(cString: sqlite3_column_text(statement, 5))
+                       let notes = String(cString: sqlite3_column_text(statement, 6))
+                       
+                       let person = ["id": id, "firstName": firstName, "lastName": lastName, "emailAddress": emailAddress, "address": address, "phoneNumber": phoneNumber, "notes": notes] as [String : Any] as [String : Any]
+                       people.add(person)
+                   }
+               }
+
+               sqlite3_finalize(statement)
+
+               return people
+           }
 }

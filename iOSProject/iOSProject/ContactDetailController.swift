@@ -46,9 +46,13 @@ class ContactDetailController: UIViewController {
     
     
     @IBAction func SaveButton(_ sender: Any) {
+
     }
+    
     @IBAction func EditButton(_ sender: Any) {
+
     }
+    
     @IBAction func DeleteButton(_ sender: Any) {
         guard let id = databaseManager.getContactId(firstName: contact?.firstName ?? "", lastName: contact?.lastName ?? "") else {
                 print("Error getting contact id")
@@ -59,6 +63,7 @@ class ContactDetailController: UIViewController {
                 let alert = UIAlertController(title: "Success", message: "Contact deleted.", preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { _ in
                     self.dismiss(animated: true, completion: nil)
+                    self.navigationController?.popViewController(animated: true)
                 }))
                 self.present(alert, animated: true, completion: nil)
             } else {

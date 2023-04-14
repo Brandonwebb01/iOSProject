@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C376399029E863D100962210 /* myDatabase.db in Resources */ = {isa = PBXBuildFile; fileRef = C376398F29E863D000962210 /* myDatabase.db */; };
 		C37E811229E758BF0009173D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811129E758BF0009173D /* AppDelegate.swift */; };
 		C37E811429E758BF0009173D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811329E758BF0009173D /* SceneDelegate.swift */; };
 		C37E811629E758BF0009173D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E811529E758BF0009173D /* ViewController.swift */; };
@@ -19,10 +18,10 @@
 		C37E812A29E7938E0009173D /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812929E7938E0009173D /* TableViewController.swift */; };
 		C37E812C29E7939D0009173D /* CreditsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C37E812B29E7939D0009173D /* CreditsController.swift */; };
 		C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */ = {isa = PBXBuildFile; fileRef = C37E812D29E7978B0009173D /* default-nscc.jpg */; };
+		C3981F8629E8DA520007C0DC /* DatabaseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3981F8529E8DA520007C0DC /* DatabaseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C376398F29E863D000962210 /* myDatabase.db */ = {isa = PBXFileReference; lastKnownFileType = file; name = myDatabase.db; path = ../../../myDatabase.db; sourceTree = "<group>"; };
 		C37E810E29E758BF0009173D /* iOSProject.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iOSProject.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C37E811129E758BF0009173D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C37E811329E758BF0009173D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +35,7 @@
 		C37E812929E7938E0009173D /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		C37E812B29E7939D0009173D /* CreditsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsController.swift; sourceTree = "<group>"; };
 		C37E812D29E7978B0009173D /* default-nscc.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "default-nscc.jpg"; path = "../../../default-nscc.jpg"; sourceTree = "<group>"; };
+		C3981F8529E8DA520007C0DC /* DatabaseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +80,7 @@
 				C37E811C29E758C10009173D /* LaunchScreen.storyboard */,
 				C37E811F29E758C10009173D /* Info.plist */,
 				C37E812D29E7978B0009173D /* default-nscc.jpg */,
-				C376398F29E863D000962210 /* myDatabase.db */,
+				C3981F8529E8DA520007C0DC /* DatabaseManager.swift */,
 			);
 			path = iOSProject;
 			sourceTree = "<group>";
@@ -145,7 +145,6 @@
 			files = (
 				C37E812E29E7978B0009173D /* default-nscc.jpg in Resources */,
 				C37E811E29E758C10009173D /* LaunchScreen.storyboard in Resources */,
-				C376399029E863D100962210 /* myDatabase.db in Resources */,
 				C37E811B29E758C10009173D /* Assets.xcassets in Resources */,
 				C37E811929E758BF0009173D /* Main.storyboard in Resources */,
 			);
@@ -158,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3981F8629E8DA520007C0DC /* DatabaseManager.swift in Sources */,
 				C37E812629E793630009173D /* SplashController.swift in Sources */,
 				C37E812C29E7939D0009173D /* CreditsController.swift in Sources */,
 				C37E812A29E7938E0009173D /* TableViewController.swift in Sources */,

@@ -17,49 +17,34 @@ class ContactInfoController: UIViewController {
     @IBOutlet weak var phoneNumberText: UITextField!
     @IBOutlet weak var notesText: UITextView!
     
-    
-    var db: OpaquePointer?
+    let databaseManager = DatabaseManager()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
-        if let path = Bundle.main.path(forResource: "myDatabase", ofType: "db") {
-            if sqlite3_open_v2(path, &db, SQLITE_OPEN_READWRITE, nil) == SQLITE_OK {
-                // Database opened successfully
-            } else {
-                print("Error opening database")
-            }
-        } else {
-            print("myDatabase.db file not found in app bundle")
-        }
     }
     
     @IBAction func SaveButton(_ sender: Any) {
-        
-        let insertStatementString = "INSERT INTO Contacts (firstName, lastName, emailAddress, address, phoneNumber, notes) VALUES (?, ?, ?, ?, ?, ?);"
-        
-        var insertStatement: OpaquePointer?
-        
-        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_text(insertStatement, 1, firstNameText.text, -1, nil)
-            sqlite3_bind_text(insertStatement, 2, lastNameText.text, -1, nil)
-            sqlite3_bind_text(insertStatement, 3, emailAddressText.text, -1, nil)
-            sqlite3_bind_text(insertStatement, 4, addressText.text, -1, nil)
-            sqlite3_bind_text(insertStatement, 5, phoneNumberText.text, -1, nil)
-            sqlite3_bind_text(insertStatement, 6, notesText.text ?? "", -1, nil)
-            
-            if sqlite3_step(insertStatement) == SQLITE_DONE {
-                        print("Successfully inserted row.")
-            } else {
-                let errmsg = String(cString: sqlite3_errmsg(db)!)
-                print("Error inserting row: \(errmsg)")
+        // Check if all fields have a value
+            guard let firstName = firstNameText.text, !firstName.isEmpty,
+                  let lastName = lastNameText.text, !lastName.isEmpty,
+                  let emailAddress = emailAddressText.text, !emailAddress.isEmpty,
+                  let address = addressText.text, !address.isEmpty,
+                  let phoneNumber = phoneNumberText.text, !phoneNumber.isEmpty,
+                  let notes = notesText.text, !notes.isEmpty else {
+                // Show an alert if any field is empty
+                let alert = UIAlertController(title: "Error", message: "All fields are required", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true, completion: nil)
+                return
             }
-        } else {
-            let errmsg = String(cString: sqlite3_errmsg(db)!)
-            print("Error preparing insert: \(errmsg)")
-        }
-        sqlite3_finalize(insertStatement)
+            
+            // Save the data to the database
+            databaseManager.createContact(firstName: firstName, lastName: lastName, emailAddress: emailAddress, address: address, phoneNumber: phoneNumber, notes: notes)
+        
+            // Show a success message to the user
+            let alert = UIAlertController(title: "Success", message: "Data added to database.", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alert, animated: true, completion: nil)
     }
-    
 }

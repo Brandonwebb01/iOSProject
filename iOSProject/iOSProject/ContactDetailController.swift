@@ -16,21 +16,36 @@ class ContactDetailController: UIViewController {
     @IBOutlet weak var phoneNumberText: UITextField!
     @IBOutlet weak var notesText: UITextView!
     
+    
+    
+    
+    var contact: (firstName: String, lastName: String, emailAddress: String, address: String, phoneNumber: String, notes: String)?
+    let databaseManager = DatabaseManager()
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Call read() function on databaseManager instance to fetch data
+        contact = databaseManager.read()
+
+        // Update UI with fetched data
+        firstNameText.text = contact?.firstName
+        lastNameText.text = contact?.lastName
+        emailAddressText.text = contact?.emailAddress
+        addressText.text = contact?.address
+        phoneNumberText.text = contact?.phoneNumber
+        notesText.text = contact?.notes
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    @IBAction func SaveButton(_ sender: Any) {
     }
-    */
-
+    @IBAction func EditButton(_ sender: Any) {
+    }
+    @IBAction func DeleteButton(_ sender: Any) {
+    }
+    @IBAction func CloseButton(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
+    
 }

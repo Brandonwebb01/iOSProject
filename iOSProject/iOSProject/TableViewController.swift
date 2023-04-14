@@ -50,18 +50,17 @@ class TableViewController: UIViewController, UITableViewDataSource, UITableViewD
             selectedCellIndex = indexPath.row;
             self.performSegue(withIdentifier: "ShowSelectedContact", sender: nil)
         }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-            if (segue.identifier == "ShowSelectedContact") {
-                let vc = segue.destination as! ContactDetailController
-                let selectedContact = contacts[selectedCellIndex] as! NSDictionary
-                
-                vc.firstNameText.text = selectedContact.object(forKey: "firstName") as? String
-                vc.lastNameText.text = selectedContact.object(forKey: "lastName") as? String
-                vc.emailAddressText.text = selectedContact.object(forKey: "emailAddress") as? String
-                vc.addressText.text = selectedContact.object(forKey: "address") as? String
-                vc.phoneNumberText.text = selectedContact.object(forKey: "phoneNumber") as? String
-                vc.notesText.text = selectedContact.object(forKey: "notes") as? String
-            }
-        }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if let vc = segue.destination as? ContactDetailController {
+//            let selectedContact = contacts[selectedCellIndex] as! NSDictionary
+//            
+//            vc.firstNameText.text = selectedContact.object(forKey: "firstName") as? String
+//            vc.lastNameText.text = selectedContact.object(forKey: "lastName") as? String
+//            vc.emailAddressText.text = selectedContact.object(forKey: "emailAddress") as? String
+//            vc.addressText.text = selectedContact.object(forKey: "address") as? String
+//            vc.phoneNumberText.text = selectedContact.object(forKey: "phoneNumber") as? String
+//            vc.notesText.text = selectedContact.object(forKey: "notes") as? String
+//        }
+//    }
 
 }

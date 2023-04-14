@@ -109,7 +109,7 @@ class DatabaseManager {
         return true
     }
     
-    func read() -> (firstName: String, lastName: String, emailAddress: String, address: String, phone: String, notes: String) {
+    func read() -> (firstName: String, lastName: String, emailAddress: String, address: String, phoneNumber: String, notes: String) {
             var statement: OpaquePointer?
             var firstName: String?
             var lastName: String?

@@ -420,38 +420,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xpv-U6-bvr">
-                                <rect key="frame" x="26" y="580" width="56" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="0Jt-0m-OkA"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Save"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Isu-f2-VTt">
-                                <rect key="frame" x="30" y="619" width="49" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Awe-lj-l1j"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Edit"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6gC-G6-p2a">
-                                <rect key="frame" x="21" y="658" width="66" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="2bL-IP-xq7"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Delete"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oTP-vd-g44">
-                                <rect key="frame" x="24" y="697" width="61" height="31"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="31" id="Rll-fb-YJT"/>
-                                </constraints>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Close"/>
-                            </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="gLT-pY-EAp">
                                 <rect key="frame" x="20" y="464" width="374" height="108"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -462,30 +430,66 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AQJ-ih-BFZ">
+                                <rect key="frame" x="35" y="700" width="359" height="37"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1O-xW-QMA">
+                                        <rect key="frame" x="0.0" y="0.0" width="90" height="37"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Save Notes"/>
+                                        <connections>
+                                            <action selector="SaveButton:" destination="4d8-7i-HE7" eventType="touchUpInside" id="yrq-da-wwP"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qGU-AK-4g4">
+                                        <rect key="frame" x="90" y="0.0" width="89.5" height="37"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Edit"/>
+                                        <connections>
+                                            <action selector="EditButton:" destination="4d8-7i-HE7" eventType="touchUpInside" id="fao-on-bML"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="twa-UM-P2s">
+                                        <rect key="frame" x="179.5" y="0.0" width="90" height="37"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Delete"/>
+                                        <connections>
+                                            <action selector="DeleteButton:" destination="4d8-7i-HE7" eventType="touchUpInside" id="raf-Ia-yjI"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ANy-99-4xw">
+                                        <rect key="frame" x="269.5" y="0.0" width="89.5" height="37"/>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="filled" title="Close"/>
+                                        <connections>
+                                            <action selector="CloseButton:" destination="4d8-7i-HE7" eventType="touchUpInside" id="bNC-7f-8TE"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="KXw-Na-pHU"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Hox-2x-40H"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6gC-G6-p2a" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="21" id="0xY-Ja-mTF"/>
                             <constraint firstItem="eQu-xx-eQx" firstAttribute="top" secondItem="XL3-Is-XkM" secondAttribute="bottom" constant="3.5" id="13M-c4-7y3"/>
                             <constraint firstItem="69S-kl-jww" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="16q-Dz-MO7"/>
-                            <constraint firstItem="Isu-f2-VTt" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="30" id="4P7-gL-wHr"/>
-                            <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="Isu-f2-VTt" secondAttribute="trailing" constant="335" id="5J3-bK-c0A"/>
+                            <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="AQJ-ih-BFZ" secondAttribute="trailing" constant="20" id="4ZT-vP-k6N"/>
                             <constraint firstItem="XL3-Is-XkM" firstAttribute="top" secondItem="Hox-2x-40H" secondAttribute="top" id="6ls-Rc-8xj"/>
+                            <constraint firstItem="AQJ-ih-BFZ" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="35" id="7J4-oG-OjS"/>
                             <constraint firstItem="NLt-D9-dyf" firstAttribute="top" secondItem="eQu-xx-eQx" secondAttribute="bottom" constant="12" id="8Sh-tr-IFe"/>
+                            <constraint firstItem="Hox-2x-40H" firstAttribute="bottom" secondItem="AQJ-ih-BFZ" secondAttribute="bottom" constant="105" id="A16-jH-xOk"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="69S-kl-jww" secondAttribute="trailing" constant="20" id="Bro-ap-e9k"/>
-                            <constraint firstItem="6gC-G6-p2a" firstAttribute="top" secondItem="Isu-f2-VTt" secondAttribute="bottom" constant="8" symbolic="YES" id="Cwt-8N-cCu"/>
-                            <constraint firstItem="oTP-vd-g44" firstAttribute="top" secondItem="6gC-G6-p2a" secondAttribute="bottom" constant="8" symbolic="YES" id="DFc-dJ-oGH"/>
                             <constraint firstItem="gLT-pY-EAp" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="Fgh-mE-kKx"/>
                             <constraint firstItem="XL3-Is-XkM" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="Gre-iq-zcu"/>
                             <constraint firstItem="sft-I7-zFt" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="HdY-Fi-FsO"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="NLt-D9-dyf" secondAttribute="trailing" constant="20" id="Hzd-Xf-wCe"/>
                             <constraint firstItem="rSL-Vo-z86" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="IBL-zQ-H3H"/>
-                            <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="6gC-G6-p2a" secondAttribute="trailing" constant="327" id="IXc-pD-WOl"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="eQu-xx-eQx" secondAttribute="trailing" constant="20" id="KbG-jb-uoB"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="rSL-Vo-z86" secondAttribute="trailing" constant="20" id="Kql-cP-mp6"/>
                             <constraint firstItem="rSL-Vo-z86" firstAttribute="top" secondItem="jWA-mV-NHK" secondAttribute="bottom" constant="8" symbolic="YES" id="OXI-d3-fLj"/>
-                            <constraint firstItem="Isu-f2-VTt" firstAttribute="top" secondItem="Xpv-U6-bvr" secondAttribute="bottom" constant="8" symbolic="YES" id="Q8i-On-DMs"/>
                             <constraint firstItem="jWA-mV-NHK" firstAttribute="top" secondItem="69S-kl-jww" secondAttribute="bottom" constant="8" symbolic="YES" id="RD1-Qy-s4F"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="a3I-to-PBR" secondAttribute="trailing" constant="20" id="TrP-9p-Pxl"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="vkq-94-qf8" secondAttribute="trailing" constant="20" id="WcE-eN-M7b"/>
@@ -493,18 +497,13 @@
                             <constraint firstItem="a3I-to-PBR" firstAttribute="top" secondItem="yxO-qT-bVv" secondAttribute="bottom" constant="8" symbolic="YES" id="XSW-uU-xEe"/>
                             <constraint firstItem="vkq-94-qf8" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="ZHp-OS-a1i"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="XL3-Is-XkM" secondAttribute="trailing" constant="20" id="aGE-DA-ncf"/>
-                            <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="Xpv-U6-bvr" secondAttribute="trailing" constant="332" id="aR9-Hh-pOy"/>
-                            <constraint firstItem="Xpv-U6-bvr" firstAttribute="top" secondItem="gLT-pY-EAp" secondAttribute="bottom" constant="8" symbolic="YES" id="bse-e5-i8Z"/>
                             <constraint firstItem="vkq-94-qf8" firstAttribute="top" secondItem="sft-I7-zFt" secondAttribute="bottom" constant="8" symbolic="YES" id="cSv-Ln-EFv"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="sft-I7-zFt" secondAttribute="trailing" constant="20" id="cq2-at-dc5"/>
-                            <constraint firstItem="oTP-vd-g44" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="24" id="dKa-Tp-q8g"/>
-                            <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="oTP-vd-g44" secondAttribute="trailing" constant="329" id="dS1-8n-81A"/>
                             <constraint firstItem="1rD-Bd-Saw" firstAttribute="top" secondItem="vkq-94-qf8" secondAttribute="bottom" constant="13" id="eDm-9f-I2r"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="yxO-qT-bVv" secondAttribute="trailing" constant="20" id="fIz-fG-CN2"/>
                             <constraint firstItem="sft-I7-zFt" firstAttribute="top" secondItem="NLt-D9-dyf" secondAttribute="bottom" constant="8" symbolic="YES" id="gvG-Yo-aEl"/>
                             <constraint firstItem="gLT-pY-EAp" firstAttribute="top" secondItem="rSL-Vo-z86" secondAttribute="bottom" constant="20" id="ifm-w0-bOa"/>
                             <constraint firstItem="Hox-2x-40H" firstAttribute="trailing" secondItem="gLT-pY-EAp" secondAttribute="trailing" constant="20" id="j13-8t-9hs"/>
-                            <constraint firstItem="Xpv-U6-bvr" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="26" id="kl3-ZZ-RIx"/>
                             <constraint firstItem="jWA-mV-NHK" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="l0B-3L-0mm"/>
                             <constraint firstItem="yxO-qT-bVv" firstAttribute="top" secondItem="1rD-Bd-Saw" secondAttribute="bottom" constant="8" symbolic="YES" id="nCi-Wn-0K8"/>
                             <constraint firstItem="a3I-to-PBR" firstAttribute="leading" secondItem="Hox-2x-40H" secondAttribute="leading" constant="20" id="t6E-iG-3qS"/>
